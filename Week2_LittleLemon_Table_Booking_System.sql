@@ -1,4 +1,4 @@
--- Exercise 3: Create SQL queries to check available bookings based on user input --
+-- Week-2_Exercise-3: Create SQL queries to check available bookings based on user input --
 -- Task 1. populate the Bookings table
 INSERT INTO Bookings 
 (BookingID, BookingDate, TableNo, CustomerID) 
@@ -54,7 +54,7 @@ DELIMITER ;
 
 CALL AddValidBooking("2024-04-28", 5, 4);
 
--- Exercise 4: Create SQL queries to add and update bookings --
+-- Week-2_Exercise-4: Create SQL queries to add and update bookings --
 -- Task 1. Create a new procedure AddBooking to add a new table booking record
 DROP PROCEDURE IF EXISTS AddBooking;
 DELIMITER // 

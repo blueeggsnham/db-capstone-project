@@ -1,4 +1,4 @@
--- Exercise 1: Create a virtual table to summarize data --
+-- Week-2_Exercise-1: Create a virtual table to summarize data --
 -- Task 1. Create a virtual table to summarize data
 DROP VIEW IF EXISTS `OrdersView`;
 CREATE VIEW `OrdersView` AS
@@ -50,7 +50,7 @@ WHERE
         WHERE
             Quantity > 2);
 
--- Exercise 2: Create optimized queries to manage and analyze data --
+-- Week-2_Exercise-2: Create optimized queries to manage and analyze data --
 -- Task 1. Stored Procedure GetMaxQuantity
 DROP PROCEDURE IF EXISTS `GetMaxQuantity`;
 DELIMITER //
@@ -67,7 +67,7 @@ PREPARE GetOrderDetail FROM 'SELECT OrderID, Quantity, TotalCost AS Cost FROM Or
 SET @id = 1;
 EXECUTE GetOrderDetail USING @id;
 
--- 3. Create a stored procedure to delete an order record based on the user input of the order id.
+-- Task 3. Create a stored procedure to delete an order record based on the user input of the order id.
 DROP PROCEDURE IF EXISTS `CancelOrder`;
 DELIMITER //
 CREATE PROCEDURE CancelOrder(IN order_id INT)
