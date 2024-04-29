@@ -21,18 +21,6 @@ VALUES
 
 SELECT * FROM Staffs;
 
--- DELETE FROM Bookings WHERE BookingID < 6;
-INSERT INTO Bookings 
-(BookingID, BookingDate, TableNo, CustomerID) 
-VALUES 
-(1, '2024-04-25', 5, 4),
-(2, '2024-04-28', 3, 3 ),
-(3, '2024-04-28', 2, 2),
-(4, '2024-04-27', 2, 1),
-(5, '2024-04-26', 1, 5);
-
-SELECT * FROM Bookings;
-
 INSERT INTO MenuItems (Course, Starter, Dessert, Price)
 VALUES
 ('Kabasa', 'Tomato bread', 'Ice cream', 44),
@@ -69,7 +57,7 @@ VALUES
 
 SELECT * FROM MenuItems_Menus;
 
-INSERT INTO Orders (OrderID, MenuItemID, CustomrID, OrderDate, Quantity, TotalCost)
+INSERT INTO Orders (OrderID, MenuItemID, CustomerID, OrderDate, Quantity, TotalCost)
 VALUES
 (1,6,1,'2024-04-27',5, 250),
 (2,3,2,'2024-04-28',3, 200),

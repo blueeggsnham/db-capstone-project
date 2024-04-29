@@ -76,5 +76,6 @@ Delete FROM Orders WHERE OrderID = order_id;
 SELECT CONCAT('Order ', order_id, ' is cancalled') AS 'Confirmation';
 END //
 DELIMITER ;
-
+/*
 CALL CancelOrder(5);
+*/
