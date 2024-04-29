@@ -8,9 +8,9 @@ VALUES
 (3, '2024-04-28', 2, 2),
 (4, '2024-04-27', 2, 1),
 (5, '2024-04-26', 1, 5);
-
+/*
 SELECT BookingID, BookingDate, TableNo, CustomerID FROM Bookings;
-
+*/
 -- Task 2. Create a stored procedure CheckBooking to check the avaiability of a table
 DROP PROCEDURE IF EXISTS CheckBooking;
 
@@ -24,9 +24,9 @@ WHERE BookingDate = booking_date AND TableNo = table_no;
 SELECT CONCAT('Table ', table_no, ' is ', TableStatus) AS 'Booking Status';
 END //
 DELIMITER ;
-
+/*
 CALL CheckBooking("2024-04-28", 3);
-
+*/
 -- Task 3. Create a procedure AddValidBooking (use a transaction statement to perform a rollback if 
 -- a customer reserves a table that’s already booked under another name).  
 DROP PROCEDURE IF EXISTS AddValidBooking;
@@ -51,9 +51,9 @@ ELSE
 END IF;
 END //
 DELIMITER ;
-
+/*
 CALL AddValidBooking("2024-04-28", 5, 4);
-
+*/
 -- Week-2_Exercise-4: Create SQL queries to add and update bookings --
 -- Task 1. Create a new procedure AddBooking to add a new table booking record
 DROP PROCEDURE IF EXISTS AddBooking;
@@ -62,12 +62,12 @@ CREATE PROCEDURE AddBooking(IN booking_id INT, IN customer_id INT, IN table_no I
 BEGIN
 INSERT INTO Bookings (BookingID, BookingDate, TableNo, CustomerID) 
 VALUES (booking_id, booking_date, table_no, customer_id);
-SELECT 'New booking added' AS Confirmation;
+SELECT CONCAT('New booking added at ', booking_date, '.') AS Confirmation;
 END //
 DELIMITER ;
-
+/*
 CALL AddBooking(9, 3, 4, "2022-12-30");
-
+*/
 -- Task 2. Create a new procedure called UpdateBooking (BookingID, Updated-Date)
 DROP PROCEDURE IF EXISTS UpdateBooking;
 DELIMITER // 
@@ -77,9 +77,9 @@ UPDATE Bookings SET BookingDate = booking_date WHERE BookingID = booking_id;
 SELECT CONCAT('Booking ', booking_id, ' is updated') AS Confirmation;
 END //
 DELIMITER ;
-
+/*
 CALL UpdateBooking(9, "2022-12-17");
-
+*/
 -- Task 3. Create a new procedure called CancelBooking (BookingID)
 DROP PROCEDURE IF EXISTS CancelBooking;
 DELIMITER // 
@@ -89,5 +89,6 @@ DELETE FROM Bookings WHERE BookingID = booking_id;
 SELECT CONCAT('Booking ', booking_id, ' cancelled') AS Confirmation;
 END //
 DELIMITER ;
-
+/*
 CALL CancelBooking(9);
+*/
